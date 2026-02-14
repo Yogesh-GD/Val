@@ -163,7 +163,7 @@ export default function LoveQuiz() {
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
-      className="text-white text-center px-6"
+      className="text-white text-center px-6 mt-52"
     >
       <h2 className="text-3xl font-bold mb-6">
         {questions[current].question}

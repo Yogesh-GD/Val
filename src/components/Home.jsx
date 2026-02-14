@@ -19,7 +19,8 @@ export default function Home() {
 
   return (
 <main className="relative min-h-screen w-full flex justify-center text-center bg-gradient-to-br from-pink-400 via-red-400 to-pink-600">
-
+<div className=" bg-gradient-to-br from-pink-400 w-full via-red-400 to-pink-600 ">
+  
       <AnimatePresence mode="wait">
 
         {step === "intro" && (
@@ -29,7 +30,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 1.2 }}
             transition={{ duration: 0.8 }}
-            className="z-10 text-white px-6"
+            className="z-10 text-white px-6 mt-72"
           >
             <motion.h1
               initial={{ y: -40, opacity: 0 }}
@@ -96,6 +97,7 @@ export default function Home() {
         )}
 
       </AnimatePresence>
+</div>
     </main>
   );
 }
