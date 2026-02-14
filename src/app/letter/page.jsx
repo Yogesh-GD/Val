@@ -49,7 +49,6 @@ export default function LetterBook() {
         style={{ perspective: "3000px" }}
       >
 
-        {/* Spine */}
         <div className="absolute left-0 top-0 h-full w-4 bg-rose-400 rounded-l-2xl shadow-inner z-20" />
 
         {pages.map((page, index) => {
@@ -66,7 +65,6 @@ export default function LetterBook() {
                 zIndex: pages.length - index,
               }}
             >
-              {/* FRONT SIDE */}
               <div
                 className="absolute w-full h-full bg-[#fffaf5] rounded-2xl shadow-2xl p-6 md:p-12"
                 style={{ backfaceVisibility: "hidden" }}
@@ -99,7 +97,6 @@ export default function LetterBook() {
                 </div>
               </div>
 
-              {/* BACK SIDE */}
               <div
                 className="absolute w-full h-full bg-white rounded-2xl shadow-2xl"
                 style={{

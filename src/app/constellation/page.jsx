@@ -11,7 +11,6 @@ export default function ConstellationLove() {
   useEffect(() => {
     setMounted(true);
 
-    // Background stars
     const bgStars = Array.from({ length: 150 }).map(() => ({
       size: Math.random() * 2 + 1,
       top: Math.random() * 100,
@@ -21,7 +20,6 @@ export default function ConstellationLove() {
 
     setStars(bgStars);
 
-    // Curved shooting stars
     const curved = Array.from({ length: 3 }).map(() => ({
       delay: Math.random() * 6,
       duration: 3 + Math.random() * 2,
@@ -35,12 +33,10 @@ export default function ConstellationLove() {
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
 
-      {/* 🌌 Nebula Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-pink-900 to-black opacity-80" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,0,150,0.4),transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(0,150,255,0.3),transparent_60%)] blur-3xl" />
 
-      {/* ✨ Twinkling Stars */}
       <div className="absolute inset-0">
         {stars.map((star, i) => (
           <motion.div
@@ -61,7 +57,6 @@ export default function ConstellationLove() {
         ))}
       </div>
 
-      {/* 🌠 Real Curved Shooting Stars (SVG Path) */}
       <svg className="absolute inset-0 w-full h-full pointer-events-none">
         {shootingStars.map((s, i) => (
           <motion.path
@@ -86,10 +81,8 @@ export default function ConstellationLove() {
         ))}
       </svg>
 
-      {/* ⭐ Constellation Letters */}
       <svg viewBox="0 0 800 500" className="w-[90%] max-w-4xl z-10">
 
-        {/* ===== M ===== */}
         {[ 
           [120, 350],
           [180, 150],
@@ -119,12 +112,11 @@ export default function ConstellationLove() {
           transition={{ duration: 2 }}
         />
 
-        {/* ===== PROPER Y ===== */}
         {[
-          [500, 150],  // top left
-          [600, 150],  // top right
-          [550, 250],  // center merge
-          [550, 350],  // bottom tail
+          [500, 150], 
+          [600, 150], 
+          [550, 250],  
+          [550, 350], 
         ].map(([x, y], i) => (
           <motion.circle
             key={"y" + i}
@@ -162,7 +154,6 @@ export default function ConstellationLove() {
 
       </svg>
 
-      {/* 💫 Glow Text */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

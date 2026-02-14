@@ -32,9 +32,8 @@ export default function RewardCards({ count, isPerfect }) {
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-6 mt-10 px-4">
+    <div className="flex flex-wrap justify-center gap-6 mt-10 px-4 overflow-scroll">
 
-      {/* NORMAL REWARD CARDS */}
       {shuffledRewards.map((reward, index) => (
         <div
           key={index}
@@ -47,7 +46,6 @@ export default function RewardCards({ count, isPerfect }) {
             className="relative w-full h-full"
             style={{ transformStyle: "preserve-3d" }}
           >
-            {/* FRONT */}
             <div
               className="absolute w-full h-full bg-white text-pink-600 rounded-2xl flex items-center justify-center font-bold shadow-xl"
               style={{ backfaceVisibility: "hidden" }}
@@ -55,7 +53,6 @@ export default function RewardCards({ count, isPerfect }) {
               💝 Tap to Reveal
             </div>
 
-            {/* BACK */}
             <div
               className="absolute w-full h-full bg-pink-500 text-white rounded-2xl flex items-center justify-center text-center px-3 shadow-xl"
               style={{
@@ -69,7 +66,6 @@ export default function RewardCards({ count, isPerfect }) {
         </div>
       ))}
 
-      {/* 🔐 SPECIAL LOCKED CARD */}
       <div
         className="w-44 h-60 perspective cursor-pointer border-2 border-yellow-300 rounded-2xl"
         onClick={() => toggleFlip("special")}
@@ -80,7 +76,6 @@ export default function RewardCards({ count, isPerfect }) {
           className="relative w-full h-full"
           style={{ transformStyle: "preserve-3d" }}
         >
-          {/* FRONT */}
           <div
             className="absolute w-full h-full bg-yellow-200 text-pink-600 rounded-2xl flex items-center justify-center font-bold shadow-xl"
             style={{ backfaceVisibility: "hidden" }}
@@ -88,7 +83,6 @@ export default function RewardCards({ count, isPerfect }) {
             🔒 Ultimate Reward
           </div>
 
-          {/* BACK */}
           <div
             className="absolute w-full h-full rounded-2xl flex items-center justify-center text-center px-4 shadow-xl"
             style={{

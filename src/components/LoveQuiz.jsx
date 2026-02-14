@@ -37,41 +37,36 @@ export default function LoveQuiz() {
      {
       question: "who talks more ?",
       options: ["me", "you", "us"],
-      correct: 1,
+      correct: 0,
     },
     {
       question: "who listen more ?",
       options: ["me", "you", "us"],
-      correct: 0,
+      correct: 1,
     },
     {
       question: "who forgets things the most ?",
       options: ["me", "you", "us"],
-      correct: 0,
+      correct: 1,
     },
     {
       question: "who is more pretty ?",
       options: ["me", "you", "us"],
-      correct: 1,
+      correct: 0,
     },{
       question: "who is dangerous ?",
       options: ["me", "you", "us"],
-      correct: 1,
+      correct: 0,
     }, {
       question: "who is more sexy ?",
       options: ["me", "you", "us"],
-      correct: 1,
+      correct: 0,
     }, {
       question: "who  sleeps more ?",
       options: ["me", "you", "us"],
-      correct: 1,
-    },{
-      question: "The date we have our first kiss ?",
-      options: ["14 june", "16 huly", "17 june"],
       correct: 0,
-    },
-    {
-      question: "The thing I do u most  ?",
+    },{
+      question: "The date we had our first kiss ?",
       options: ["14 june", "16 huly", "17 june"],
       correct: 0,
     },
@@ -106,59 +101,61 @@ export default function LoveQuiz() {
   };
  const isPerfect = score === questions.length;
 
-  if (showResult) {
-    const reward = getReward(score, questions.length);
+ if (showResult) {
+  const reward = getReward(score, questions.length);
 
-    return (
+  return (
+    <div className="min-h-screen w-full overflow-y-auto">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="text-white text-center px-6"
+        className="text-white text-center px-4 sm:px-6 py-10 max-w-4xl mx-auto"
       >
-        <h2 className="text-4xl font-bold mb-4">Quiz Completed 💘</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+          Quiz Completed 💘
+        </h2>
 
-        <p className="text-xl mb-6">
+        <p className="text-base sm:text-lg md:text-xl mb-6">
           You scored {score} out of {questions.length}
         </p>
 
-       {reward === "perfect" && (
-  <>
-    <h3 className="text-3xl font-bold text-yellow-300 mb-4">
-      100% Compatibility Unlocked ❤️
-    </h3>
+        {reward === "perfect" && (
+          <>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-300 mb-6">
+              100% Compatibility Unlocked ❤️
+            </h3>
+            <RewardCards count={score} isPerfect={isPerfect} />
+          </>
+        )}
 
-<RewardCards count={score} isPerfect={isPerfect} />
+        {reward === "good" && (
+          <>
+            <h3 className="text-lg sm:text-xl md:text-2xl mb-6">
+              Pretty amazing together 💕
+            </h3>
+            <RewardCards count={score} />
+          </>
+        )}
 
-  </>
-)}
+        {reward === "funny" && (
+          <>
+            <h3 className="text-lg sm:text-xl md:text-2xl mb-6">
+              Interesting score 😏
+            </h3>
+            <RewardCards count={score} />
+          </>
+        )}
 
-{reward === "good" && (
-  <>
-    <h3 className="text-2xl mb-4">
-      Pretty amazing together 💕
-    </h3>
-    <RewardCards count={score} />
-  </>
-)}
-
-{reward === "funny" && (
-  <>
-    <h3 className="text-2xl mb-4">
-      Interesting score 😏
-    </h3>
-    <RewardCards count={score} />
-  </>
-)}
-
-
-        <button
-          className="mt-8 bg-white text-pink-600 px-8 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition"
-        >
-          <Link href={"/valentine-week"} >Continue →</Link>
-        </button>
+        <Link href="/valentine-week">
+          <button className="mt-10 bg-white text-pink-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition">
+            Continue →
+          </button>
+        </Link>
       </motion.div>
-    );
-  }
+    </div>
+  );
+}
+
 
   return (
     <motion.div

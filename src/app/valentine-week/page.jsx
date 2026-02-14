@@ -56,7 +56,6 @@ export default function ValentineWeek() {
 
   const parallax = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
-  /* -------- Generate Realistic Petals -------- */
   useEffect(() => {
     const width = window.innerWidth;
 
@@ -87,13 +86,11 @@ export default function ValentineWeek() {
       className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth"
     >
      
-      {/* 🌌 Parallax Background Glow */}
       <motion.div
         style={{ y: parallax }}
         className="fixed inset-0 -z-10 bg-gradient-to-br from-pink-200/20 to-rose-300/20 blur-3xl"
       />
 
-      {/* 🌹 3D Rotating Petals */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         {petals.map((petal, i) => (
           <motion.div
@@ -130,7 +127,6 @@ export default function ValentineWeek() {
         ))}
       </div>
 
-      {/* ✨ Soft Glowing Particles */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         {particles.map((p, i) => (
           <motion.div
@@ -153,7 +149,6 @@ export default function ValentineWeek() {
         ))}
       </div>
 
-      {/* 💘 Sections */}
       {days.map((day, index) => (
         <section
           key={index}

@@ -18,11 +18,10 @@ export default function Home() {
   }, [step]);
 
   return (
-    <main className="relative h-screen w-full overflow-hidden flex items-center justify-center text-center bg-gradient-to-br from-pink-400 via-red-400 to-pink-600">
+<main className="relative min-h-screen w-full flex justify-center text-center bg-gradient-to-br from-pink-400 via-red-400 to-pink-600">
 
       <AnimatePresence mode="wait">
 
-        {/* INTRO */}
         {step === "intro" && (
           <motion.div
             key="intro"
@@ -52,7 +51,6 @@ export default function Home() {
           </motion.div>
         )}
 
-        {/* BURST ANIMATION */}
         {step === "animation" && (
           <motion.div
             key="animation"
@@ -85,7 +83,6 @@ export default function Home() {
           </motion.div>
         )}
 
-        {/* QUIZ */}
         {step === "quiz" && (
           <motion.div
             key="quiz"

@@ -41,7 +41,6 @@ export default function FinalPage() {
     const next = noClicks + 1;
     setNoClicks(next);
 
-    // After first click, activate move mode
     if (!moveMode) {
       setMoveMode(true);
     }
@@ -106,7 +105,6 @@ export default function FinalPage() {
         So… will you be my Valentine? 💘
       </h1>
 
-      {/* GIF */}
       {noClicks > 0 && (
         <motion.img
           key={noClicks}
@@ -119,7 +117,6 @@ export default function FinalPage() {
         />
       )}
 
-      {/* MESSAGE */}
       <motion.div
         key={currentMessage}
         initial={{ opacity: 0, y: 10 }}
@@ -129,10 +126,8 @@ export default function FinalPage() {
         {currentMessage}
       </motion.div>
 
-      {/* BUTTON ROW */}
       <div className="relative flex items-center justify-center gap-8">
 
-        {/* YES BUTTON */}
         <motion.button
           onClick={() => setAccepted(true)}
           animate={{ scale: yesScale }}
@@ -142,7 +137,6 @@ export default function FinalPage() {
           YES ❤️
         </motion.button>
 
-        {/* NO BUTTON */}
         {!moveMode ? (
           <button
             onClick={handleNoClick}
